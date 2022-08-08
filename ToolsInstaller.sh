@@ -5,45 +5,46 @@ clear
 green='\e[0;34m'
 white='\e[1;37m'
 red='\e[1;31m'
+
 ###################################################
-# CTRL C
+# Detecting CTRL + C Key
 ###################################################
 trap ctrl_c INT
+
 ctrl_c() {
-clear
-echo -e $red"[#]> ( Ctrl + C ) Detected, Exit Now "
-sleep 1
-echo ""
-echo -e $white"[#]> Good Bye MR.A_404 :* "
-sleep 1
-echo ""
-echo -e $red"[#]> MR.A_404 kick you ... "
-read enter
-exit
+    clear
+    echo -e $red"[#]> ( Ctrl + C ) Detected, Exit Now "
+    sleep 1
+    echo ""
+    echo -e $white"[#]> Good Bye MR.A_404 :* "
+    sleep 1
+    echo ""
+    echo -e $red"[#]> MR.A_404 kick you ... "
+    read enter
+    exit
 }
+
 echo -e $red"___           _        _ _             _____           _"
 echo -e $white"|_ _|_ __  ___| |_ __ _| | | ___ _ __  |_   _|__   ___ | |___"
 echo -e $red"| ||  _ \/ __| __/ _  | | |/ _ \  __|   | |/ _ \ / _ \| / __|"
 echo -e $white"| || | | \__ \ || (_| | | |  __/ |      | | (_) | (_) | \__ \ "
 echo -e $red"|___|_| |_|___/\__\__,_|_|_|\___|_|      |_|\___/ \___/|_|___/"
-echo" "
-echo" "
+echo " "
+echo " "
 echo -e $red"-------------------------------------------------"
 echo -e $red"| $white Installer Tools Coded By MR.A_404            $red |"
 echo -e $red"| $white Greetz : Ghost Hunter Illusion - HexolzWolf  $red |"
 echo -e $red"| $white Contact : Andy.Notfound@gmail.com            $red |"
 echo -e $red"-------------------------------------------------"
-echo" "
 echo -e $white" 01) Red Hawk"
-echo -e $white" 02) D-Tect"
-echo -e $white" 03) Hunner"
-echo -e $white" 04) WordPress Scan"
-echo -e $white" 05) Webdav"
-echo -e $white" 06) Metasploit"
-echo -e $white" 07) Kali Nethunter"
-echo -e $white" 08) Ubuntu"
-echo -e $white" 09) Youtube Music"
-echo -e $white" 10) viSQL "
+echo -e $white" 02) Hunner"
+echo -e $white" 03) WordPress Scan"
+echo -e $white" 04) Webdav"
+echo -e $white" 05) Kali Nethunter"
+echo -e $white" 06) Ubuntu"
+echo -e $white" 07) Youtube Music"
+
+
 echo -e $white" 11) Weeman"
 echo -e $white" 12) WFDroid"
 echo -e $white" 13) FB Brute Force"
@@ -90,151 +91,122 @@ echo -e $green" 53) The Fat Rat"
 echo -e $green" 54) IP Geolocation"
 echo -e $green" 55) exit"
 echo -e $white""
-read -p "[MR.A_404@choose]> " lol;
-if [ $lol = 01 ] || [ $lol = 01 ]
+read -p "[MR.A_404@choose]> " userChoice;
+
+## RED HAWK
+if [ $userChoice = 01 ] || [ $userChoice = 1 ]
+    then
+    clear
+    echo -e $green" Installing..."
+    sleep 1
+    apt install php && git
+    git clone https://github.com/Tuhinshubhra/RED_HAWK
+    cd RED_HAWK
+    php rhawk.php
+    echo -e $green"Done Installed..."
+    clear
+fi
+
+## Hunner
+if [ $userChoice = 02 ] || [ $userChoice = 2 ]
+    then
+    clear
+    echo -e $green"Installing..."
+    sleep 1
+    apt install python && git
+    git clone https://github.com/b3-v3r/Hunner
+    cd Hunner
+    python hunner.py
+    echo -e $red" Done Installed..."
+    clear
+fi
+
+## Wordpress Scan
+if [ $userChoice = 03 ] || [ $userChoice = 3 ]
+    then
+    clear
+    echo -e $green"Installing..."
+    sleep 1
+    apt install ruby && curl && git
+    git clone https://github.com/wpscanteam/wpscan
+    cd ~/wpscan
+    gem install bundle
+    bundle config build.nokogiri --use-system-libraries
+    bundle install
+    ruby wpscan.rb --update
+    cd ~/
+    echo -e $red"Done Installed..."
+    clear
+fi
+
+## Webdav
+if [ $userChoice = 04 ] || [ $userChoice = 4 ]
+    then
+    clear
+    echo -e $green" Installing..."
+    sleep 1
+    apt install python3 && openssl curl
+    pip2 install urllib3 chardet certifi idna requests
+    pkg install libcurl
+    mkdir webdav
+    cd ~/webdav
+    wget https://pastebin.com/raw/HnVyQPtR -O webdav.py
+    chmod 777 webdav.py
+    cd ~/
+    echo -e $red" Done Installed..."
+    clear
+fi
+
+## kali Net Hunter
+if [ $userChoice = 05 ] || [ $userChoice = 5 ]
+    then
+    clear
+    echo -e $green" Installing..."
+    sleep 1
+    apt install curl
+    curl -LO https://raw.githubusercontent.com/Hax4us/Nethunter-In-Termux/master/kalinethunter
+    chmod +x kalinethunter
+    ./kalinethunter
+    echo -e $red" Done Installed..."
+    clear
+fi
+
+## Ubuntu Termux
+if [ $userChoice = 06 ] || [ $userChoice = 6 ]
+    then
+    clear
+    echo -e $green" Installing..."
+    sleep 1
+    apt install git && wget && proot
+    git clone https://github.com/Neo-Oli/termux-ubuntu.git
+    cd ~/termux-ubuntu
+    chmod +x ubuntu.sh
+    ./ubuntu
+    echo "Wait And See..."
+    sleep 1
+    echo "NB : nameserver 8.8.8.8" > /data/data/com.termux/files/home/termux-ubuntu/ubuntu-fs/etc/resolv.conf
+    echo -e $red" Done Installed..."
+    clear
+fi
+
+## MPS Youtube
+if [ $userChoice = 07 ] || [ $userChoice = 7 ]
+    then
+    clear
+    echo -e $green" Installing..."
+    sleep 1
+    apt install python
+    pip3 install mps-youtube
+    pip3 install youtube-dl
+    echo -e $red" Done Installed..."
+    clear
+fi
+
+if [ $userChoice = 11 ] || [ $userChoice = 11 ]
 then
 clear
 echo -e $green" Installing..."
 sleep 1
-apt update && apt upgrade
-apt install php
-apt install git
-git clone https://github.com/Tuhinshubhra/RED_HAWK
-echo -e $green"Done Installed..."
-fi
-if [ $lol = 02 ] || [ $lol = 02 ]
-then
-clear
-echo -e $green" Installing..."
-sleep 1
-apt-get update && apt-get upgrade
-apt-get install git
-apt-get install python2
-git clone https://github.com/shawarkhanethicalhacker/D-TECT
-echo -e $red"Done Installed..."
-fi
-if [ $lol = 03 ] || [ $lol = 03 ]
-then
-clear
-echo -e $green"Installing..."
-sleep 1
-apt-get update && apt-get upgrade
-apt install python
-apt install git
-git clone https://github.com/b3-v3r/Hunner
-echo -e $red" Done Installed..."
-fi
-if [ $lol = 04 ] || [ $lol = 04 ]
-then
-clear
-echo -e $green"Installing..."
-sleep 1
-apt-get update && apt-get upgrade
-apt install ruby
-apt install curl
-apt install git
-git clone https://github.com/wpscanteam/wpscan
-cd ~/wpscan
-gem install bundle
-bundle config build.nokogiri --use-system-libraries
-bundle install
-ruby wpscan.rb --update
-cd ~/
-echo -e $red"Done Installed..."
-fi
-if [ $lol = 05 ] || [ $lol = 05 ]
-then
-clear
-echo -e $green" Installing..."
-sleep 1
-apt update && apt upgrade
-apt install python2
-pip2 install urllib3 chardet certifi idna requests
-apt install openssl curl
-pkg install libcurl
-mkdir webdav
-cd ~/webdav
-wget https://pastebin.com/raw/HnVyQPtR -O webdav.py
-chmod 777 webdav.py
-cd ~/
-echo -e $red" Done Installed..."
-fi
-if [ $lol = 06 ] || [ $lol = 06 ]
-then
-clear
-echo -e $green" Installing..."
-sleep 1
-apt update && apt upgrade
-apt install git
-apt install wget
-wget https://raw.githubusercontent.com/verluchie/termux-metasploit/master/install.sh
-chmod 777 install.sh
-sh install.sh
-echo -e $red" Done Installed..."
-fi
-if [ $lol = 07 ] || [ $lol = 07 ]
-then
-clear
-echo -e $green" Installing..."
-sleep 1
-apt update && apt upgrade
-apt install git
-git clone https://github.com/Hax4us/Nethunter-In-Termux.git
-cd ~/Nethunter-In-Termux
-chmod 777 kalinethunter
-sh kalinethunter
-echo -e $red" Done Installed..."
-fi
-if [ $lol = 08 ] || [ $lol = 08 ]
-then
-clear
-echo -e $green" Installing..."
-sleep 1
-apt update && apt upgrade
-apt install git
-apt install wget
-apt install proot
-git clone https://github.com/Neo-Oli/termux-ubuntu.git
-cd ~/termux-ubuntu
-chmod +x ubuntu.sh
-sh ubuntu.sh
-echo "Wait And See..."
-sleep 1
-echo "NB : nameserver 8.8.8.8" > /data/data/com.termux/files/home/termux-ubuntu/ubuntu-fs/etc/resolv.conf
-echo -e $red" Done Installed..."
-fi
-if [ $lol = 09 ] || [ $lol = 09 ]
-then
-clear
-echo -e $green" Installing..."
-sleep 1
-apt update && apt upgrade
-apt install python
-pip3 install mps_youtube
-pip3 install youtube_dl
-apt install mpv
-echo -e $red" Done Installed..."
-fi
-if [ $lol = 10 ] || [ $lol = 10 ]
-then
-clear
-echo -e $green" Installing..."
-sleep 1
-apt update && apt upgrade
-pkg install git
-pkg install python2
-git clone https://github.com/blackvkng/viSQL.git
-cd ~/viSQL
-chmod 777 viSQL.py
-cd ~/
-echo -e $red" Done Installed..."
-fi
-if [ $lol = 11 ] || [ $lol = 11 ]
-then
-clear
-echo -e $green" Installing..."
-sleep 1
-apt update && apt upgrade
 pkg install git
 apt install python2
 git clone https://github.com/samyoyo/weeman
@@ -244,12 +216,12 @@ pip2 install bs4
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 12 ] || [ $lol = 12 ]
+
+if [ $userChoice = 12 ] || [ $userChoice = 12 ]
 then
 clear
 echo -e $green" Installing..."
 sleep 1
-apt update && apt upgrade
 apt install wget
 mkdir wfdroid
 cd ~/wfdroid
@@ -259,7 +231,8 @@ sh wfdinstall
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 13 ] || [ $lol = 13 ]
+
+if [ $userChoice = 13 ] || [ $userChoice = 13 ]
 then
 clear
 sleep 1
@@ -277,7 +250,8 @@ chmod 777 fbbrute.py
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 14 ] || [ $lol = 14 ]
+
+if [ $userChoice = 14 ] || [ $userChoice = 14 ]
 then
 clear
 echo -e $green" Installing..."
@@ -290,7 +264,8 @@ unzip ngrok-stable-linux-arm.zip
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 15 ] || [ $lol = 15 ]
+
+if [ $userChoice = 15 ] || [ $userChoice = 15 ]
 then
 clear
 echo -e $green" Installing..."
@@ -303,7 +278,8 @@ git clone https://github.com/cyweb/hammer
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 16 ] || [ $lol = 16 ]
+
+if [ $userChoice = 16 ] || [ $userChoice = 16 ]
 then
 clear
 echo -e $green" Installing..."
@@ -318,7 +294,8 @@ termux-fix-shebang rsf.py
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 17 ] || [ $lol = 17 ]
+
+if [ $userChoice = 17 ] || [ $userChoice = 17 ]
 then
 clear
 echo -e $green" Installing..."
@@ -329,7 +306,8 @@ wget http://scrapmaker.com/download/data/wordlists/dictionaries/rockyou.txt
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 18 ] || [ $lol = 18 ]
+
+if [ $userChoice = 18 ] || [ $userChoice = 18 ]
 then
 clear
 echo -e $green" Installing..."
@@ -340,18 +318,19 @@ git clone https://github.com/glides/Weevely
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 19 ] || [ $lol = 19 ]
+
+if [ $userChoice = 19 ] || [ $userChoice = 19 ]
 then
 clear
 echo -e $green" Installing..."
 sleep 1
-apt update && apt upgrade
 apt install python2
 git clone https://github.com/sqlmapproject/sqlmap.git
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 20 ] || [ $lol = 20 ]
+
+if [ $userChoice = 20 ] || [ $userChoice = 20 ]
 then
 clear
 echo -e $green" Installing..."
@@ -363,12 +342,12 @@ git clone https://github.com/maurosoria/dirsearch.git
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 21 ] || [ $lol = 21 ]
+
+if [ $userChoice = 21 ] || [ $userChoice = 21 ]
 then
 clear
 echo -e $green" Installing..."
 sleep 1
-apt update && apt upgrade
 apt-get install php
 mkdir adfin
 cd ~/webdav
@@ -376,12 +355,12 @@ wget https://pastebin.com/raw/32txZ6Qr -O adfin.php
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 22 ] || [ $lol = 22 ]
+
+if [ $userChoice = 22 ] || [ $userChoice = 22 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt update && apt upgrade
 apt-get install php
 mkdir lokomed
 cd ~/lokomed
@@ -390,12 +369,12 @@ cd ~/
 echo -e $red" Done Installed..."
 echo -e $red" NB : php lokomedia.php a.txt "
 fi
-if [ $lol = 23 ] || [ $lol = 23 ]
+
+if [ $userChoice = 23 ] || [ $userChoice = 23 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt update && apt upgrade
 apt-get install php
 mkdir elfinder
 cd ~/elfinder
@@ -403,12 +382,12 @@ wget https://pastebin.com/raw/S7Y2V19h -O elfinder.php
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 24 ] || [ $lol = 24 ]
+
+if [ $userChoice = 24 ] || [ $userChoice = 24 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt update && apt upgrade
 apt-get install php
 mkdir magento
 cd ~/magento
@@ -416,12 +395,12 @@ wget https://pastebin.com/raw/PXkG73pG -O magento.php
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 25 ] || [ $lol = 25 ]
+
+if [ $userChoice = 25 ] || [ $userChoice = 25 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt update && apt upgrade
 apt install python2
 mkdir scanner
 cd ~/scanner
@@ -432,12 +411,12 @@ cd ~/
 echo -e $red" Done Installed..."
 echo -e $red" NB : python2 scanner.py site.com -m files "
 fi
-if [ $lol = 26 ] || [ $lol = 26 ]
+
+if [ $userChoice = 26 ] || [ $userChoice = 26 ]
 then
 clear
 echo -e $green" installing... "
 sleep 1
-apt update && apt upgrade
 apt-get install php
 mkdir bing
 cd ~/bing
@@ -445,12 +424,12 @@ wget https://pastebin.com/raw/tjQY6Tsg -O dorker.php
 cd ~/
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 27 ] || [ $lol = 27 ]
+
+if [ $userChoice = 27 ] || [ $userChoice = 27 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt update && apt upgrade
 pkg install git
 pkg install python2
 pkg install gnupg
@@ -467,12 +446,12 @@ Untuk yg menggunakan termux dengan cpu arm64 (aarch64) tidak bisa menambahkan re
 jadi sebelum menginstall tools kali di termux wajib dengan android dengan arm32 jika arm64 gunakan gnuroot"
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 28 ] || [ $lol = 28 ]
+
+if [ $userChoice = 28 ] || [ $userChoice = 28 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt update && apt upgrade
 apt-get install git
 cd ~/
 git clone https://github.com/sdrausty/termux-archlinux.git
@@ -481,12 +460,12 @@ chmod +x setupTermuxArch.sh
 ./setupTermuxArch.sh
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 29 ] || [ $lol = 29 ]
+
+if [ $userChoice = 29 ] || [ $userChoice = 29 ]
 then
 clear
 echo -e $green" installing... "
 sleep 1
-apt update && apt upgrade
 apt-get install git
 apt install wget
 git clone https://github.com/nmilosev/termux-fedora.git
@@ -494,23 +473,23 @@ cd termux-fedora
 chmod +x termux-fedora.sh
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 30 ] || [ $lol = 30 ]
+
+if [ $userChoice = 30 ] || [ $userChoice = 30 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt update && apt upgrade
 apt install python2 && apt install git
 git clone https://github.com/UltimateHackers/Hash-Buster
 cd Hash-Buster
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 31 ] || [ $lol = 31 ]
+
+if [ $userChoice = 31 ] || [ $userChoice = 31 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt update && apt upgrade
 pkg install git ncurses-utils
 git clone https://github.com/st42/termux-sudo.git
 cd termux-sudo
@@ -518,72 +497,72 @@ cat sudo > /data/data/com.termux/files/usr/bin/sudo
 chmod 700 /data/data/com.termux/files/usr/bin/sudo
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 32 ] || [ $lol = 32 ]
+
+if [ $userChoice = 32 ] || [ $userChoice = 32 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install aircrack-ng
 echo -e $red" done installed..."
 fi
-if [ $lol = 33 ] || [ $lol = 33 ]
+
+if [ $userChoice = 33 ] || [ $userChoice = 33 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git
 apt-get install perl
 git clone https://github.com/rezasp/joomscan.git
 echo -e $red" done installed..."
 fi
-if [ $lol = 34 ] || [ $lol = 34 ]
+
+if [ $userChoice = 34 ] || [ $userChoice = 34 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install wget
 wget http://www.morningstarsecurity.com/downloads/bing-ip2hosts-0.4.tar.gz && tar -xzvf bing-ip2hosts-0.4.tar.gz && cp bing-ip2hosts-0.4/bing-ip2hosts /usr/local/bin/t
 echo -e $red" done installed..."
 fi
-if [ $lol = 35 ] || [ $lol = 35 ]
+
+if [ $userChoice = 35 ] || [ $userChoice = 35 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git
 git clone git://git.kali.org/packages/bluemaho.git
 echo -e $red" done installed..."
 fi
-if [ $lol = 36 ] || [ $lol = 36 ]
+
+if [ $userChoice = 36 ] || [ $userChoice = 36 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git
 git clone git://git.kali.org/packages/bluepot.git
 echo -e $red" done installed..."
 fi
-if [ $lol = 37 ] || [ $lol = 37 ]
+
+if [ $userChoice = 37 ] || [ $userChoice = 37 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git && apt-get install php
 git clone https://github.com/whackashoe/php-spam-mail-honeypot.git
 echo -e $red" done installed..."
 fi
-if [ $lol = 38 ] || [ $lol = 38 ]
+
+if [ $userChoice = 38 ] || [ $userChoice = 38 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git
 apt-get install wget
 apt-get install perl
@@ -596,24 +575,24 @@ chmod 777 bot.pl
 echo -e $red"NB : /bot/xploit/bot.pl"
 echo -e $red" done installed..."
 fi
-if [ $lol = 39 ] || [ $lol = 39 ]
+
+if [ $userChoice = 39 ] || [ $userChoice = 39 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git && apt-get install perl
 git clone https://github.com/Moham3dRiahi/XAttacker
 cd XAttacker
 chmod 777 XAttacker.pl
 echo -e $red" done installed..."
 fi
-if [ $lol = 40 ] || [ $lol = 40 ]
+
+if [ $userChoice = 40 ] || [ $userChoice = 40 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install php5-cli
 curl -sS https://getcomposer.org/installer | php
 chmod +x composer.phar
@@ -624,34 +603,34 @@ echo -e $red" or "
 echo -e $red" php sendmail.php --help "
 echo -e $red" done installed... "
 fi
-if [ $lol = 41 ] || [ $lol = 41 ]
+
+if [ $userChoice = 41 ] || [ $userChoice = 41 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install python2
 pip install request
 git clone https://github.com/atarantini/wpbf
 echo -e $red" done installed..."
 fi
-if [ $lol = 42 ] || [ $lol = 42 ]
+
+if [ $userChoice = 42 ] || [ $userChoice = 42 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 sh -c "$(curl -fsSL https://github.com/Cabbagec/termux-ohmyzsh/raw/master/install.sh)"
 ~/.termux/colors.sh
 echo -e $red" NB : cara ganti warna nya ~/.termux/colors.sh "
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 43 ] || [ $lol = 43 ]
+
+if [ $userChoice = 43 ] || [ $userChoice = 43 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 pkg install python2
 apt-get install git
 apt-get install nano
@@ -662,12 +641,12 @@ sleep 1
 cd instabot.py
 echo -e $red"NB : ketik nano example.py "
 fi
-if [ $lol = 44 ] || [ $lol = 44 ]
+
+if [ $userChoice = 44 ] || [ $userChoice = 44 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 pkg install python
 apt-get install git
 git clone https://github.com/Manisso/fsociety
@@ -677,12 +656,12 @@ sleep 1
 cd fsociety
 echo -e $red" python fsociety.py "
 fi
-if [ $lol = 45 ] || [ $lol = 45 ]
+
+if [ $userChoice = 45 ] || [ $userChoice = 45 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 pkg install python
 apt-get install git
 git clone https://github.com/Dionach/CMSmap.git
@@ -691,12 +670,12 @@ cd CMSmap
 echo -e $red"Done Installed..."
 echo -e $red" NB : cmsmap.py -t <URL> "
 fi
-if [ $lol = 46 ] || [ $lol = 46 ]
+
+if [ $userChoice = 46 ] || [ $userChoice = 46 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 pkg install python
 apt-get install git
 git clone https://github.com/m4ll0k/Infoga.git infoga
@@ -706,12 +685,12 @@ pip install -r req
 echo -e $red"Done Installed..."
 echo -e $red"NB : python infoga.py "
 fi
-if [ $lol = 47 ] || [ $lol = 47 ]
+
+if [ $userChoice = 47 ] || [ $userChoice = 47 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install wget
 apt-get install php
 wget https://pastebin.com/raw/LDvFvtUD -O com_fabrik.php
@@ -719,12 +698,12 @@ sleep 1
 echo -e $red"Done Installed..."
 echo -e $red" NB : php com_fabrik.php target.txt "
 fi
-if [ $lol = 48 ] || [ $lol = 48 ]
+
+if [ $userChoice = 48 ] || [ $userChoice = 48 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install wget
 apt-get install php
 wget https://pastebin.com/raw/EAtSir5V -O com_foxcontact.php
@@ -732,35 +711,35 @@ sleep 1
 echo -e $red"Done Installed..."
 echo -e $red" NB : php com_foxcontact.php target.txt "
 fi
-if [ $lol = 49 ] || [ $lol = 49 ]
+
+if [ $userChoice = 49 ] || [ $userChoice = 49 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git
 git clone https://github.com/JamesAndresCM/Brute_force_gmail
 sleep 1
 echo -e $red"Done Installed..."
 echo -e $red" NB : python2.7 brute_force_gmail.py example@gmail.com PATH_TO_DICTIONARY "
 fi
-if [ $lol = 50 ] || [ $lol = 50 ]
+
+if [ $userChoice = 50 ] || [ $userChoice = 50 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git
 git clone https://github.com/rand0m1ze/ezsploit
 sleep 1
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 51 ] || [ $lol = 51 ]
+
+if [ $userChoice = 51 ] || [ $userChoice = 51 ]
 then
 clear
 echo -e $green" installing... "
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git
 apt-get install python2
 pip install requests
@@ -768,12 +747,12 @@ git clone https://github.com/p4kl0nc4t/Spammer-Grab/
 sleep 1
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 52 ] || [ $lol = 52 ]
+
+if [ $userChoice = 52 ] || [ $userChoice = 52 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git
 apt-get install unzip
 apt-get install php
@@ -783,12 +762,12 @@ unzip toko-pedia.zip
 sleep 1
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 53 ] || [ $lol = 53 ]
+
+if [ $userChoice = 53 ] || [ $userChoice = 53 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git
 git clone https://github.com/Screetsec/TheFatRat.git
 cd TheFatRat
@@ -796,12 +775,12 @@ chmod +x setup.sh && ./setup.sh
 sleep 1
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 54 ] || [ $lol = 54 ]
+
+if [ $userChoice = 54 ] || [ $userChoice = 54 ]
 then
 clear
 echo -e $green" installing..."
 sleep 1
-apt-get update && apt-get upgrade
 apt-get install git
 apt install python2
 git clone https://github.com/maldevel/IPGeolocation.git
@@ -811,13 +790,16 @@ pip install -r requirements.txt
 sleep 1
 echo -e $red" Done Installed..."
 fi
-if [ $lol = 55 ] || [ $lol = 55 ]
-then
-echo -e $green" contact : Andy.Notfound@gmail.com "
-sleep 1
-echo -e $red" fb : https://www.facebook.com/Tuan.A.404 "
-sleep 1
-echo -e $red" Bye MR.A_404 :* "
-sleep 1
-exit
+
+
+if [ $userChoice = 55 ] || [ $userChoice = 55 ]
+    then
+    echo -e $green" contact : Andy.Notfound@gmail.com "
+    sleep 1
+    echo -e $red" fb : https://www.facebook.com/Tuan.A.404 "
+    sleep 1
+    echo -e $red" Bye MR.A_404 :* "
+    sleep 1
+    exit
 fi
+
