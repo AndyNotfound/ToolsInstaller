@@ -1,8 +1,11 @@
 # Tools Installer
 
-This is re-post of my <a href="https://gist.github.com/AndyNotfound/0a6a60dd6e2c8f981a1b2373cfb524d7">GithubGist</a> 4 years ago when I started coding on Termux.Please ignore my "Past self" stupidness. I was excited about hacking and penetration back then.
-<br><br>
-![image](https://user-images.githubusercontent.com/40969170/183623717-7dd802ca-2426-46f0-b8ca-21a9b01c6ff4.png)
+This is re-post of my <a href="https://gist.github.com/AndyNotfound/0a6a60dd6e2c8f981a1b2373cfb524d7">GithubGist</a> 4 years ago when I started coding on Termux. Please ignore my "Past self" stupidness. I was excited about hacking and penetration back then.
+<br>
+
+<div align="center">
+  <img src="https://user-images.githubusercontent.com/40969170/183858892-54fb518f-391e-4175-a02e-30bc2f16b0c0.png">
+</div>
 
 ## Where can I run these script?
 I'm very sorry to dissapoint you, but this tools is <code>only usable on Termux</code>, you can't run this on Arch (I use Arch too btw), Fedora, Slackware, or even Gentoo without changing the script. <b>You can run this</b> if you change the package manager for example <code>pacman -S instead of apt install</code>.
